@@ -20,13 +20,12 @@ fitstep=0.1`30;	     (* The distance between samples. *)
 (* The exponents grow exponentially. *)
 aa = Table[gaussscale*2^n, {n, 0, ngaussians - 1}];
 
-(* Normalized Gaussian - not really necessary to normalize with
-    this method, but it allows easier switching between the two methods. *)
-g = 2^(3/4)*(a/Pi)^(1/4)*Exp[-a*s^2]; 
+(* Unnormalized Gaussians *)
+gaussians = Exp[-aa*s^2];
 
 sne = Table[s^n E^(-s),{n,0,nexponentials-1}]; (* Unnormalized exponentials *)
 sneg = Table[Fit[Table[{s, sne[[i]]}, {s, fitstart, fitend, fitstep}], 
-		 g /. a -> aa, s], {i, Length[sne]}];
+		 gaussians, s], {i, Length[sne]}];
 
 (* 
    sneg[[i]] is on the form $\gamma_{i1} Exp[-a_1 s^2]+...+\gamma_{in} Exp[-a_n s^2]$. 

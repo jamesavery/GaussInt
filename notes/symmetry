@@ -1,0 +1,33 @@
+0 0 0 0
+A B C D: AB(x1)CD(x2)
+         BA(x1)CD(x2)
+	 AB(x1)DC(x2)
+	 BA(x1)DC(x2)
+
+	 CD(x1)AB(x2)
+	 CD(x1)BA(x2)
+	 DC(x1)AB(x2)
+	 DC(x1)BA(x2)
+	 
+0 0 s s
+A B C D: AB(x1)CD(x2)
+      	 AB(x1)DC(x2)
+      	 BA(x1)CD(x2)
+	 BA(x1)DC(x2)
+
+	 CD(x1)AB(x2) (-1)^L
+	 CD(x1)BA(x2) (-1)^L
+	 DC(x1)AB(x2) (-1)^L
+	 DC(x1)BA(x2) (-1)^L
+
+0 s s s
+A B C D: AB(x1)CD(x2)
+      	 AB(x1)DC(x2)
+
+	 ...more...?
+
+0 s 0 s
+A B C D: AB(x1)CD(x2)
+      	 BA(x1)DC(x2) (-1)^L
+
+	 ...more...?
